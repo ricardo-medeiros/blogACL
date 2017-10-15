@@ -10,6 +10,20 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
+                        
+                        <div class="form-group{{ $errors->has('cpf') ? ' has-error' : '' }}">
+                            <label for="cpf" class="col-md-4 control-label">CPF</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control" name="cpf" value="{{ old('cpf') }}" required autofocus>
+
+                                @if ($errors->has('cpf'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('cpf') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
@@ -24,7 +38,25 @@
                                 @endif
                             </div>
                         </div>
+                        
+                        <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                            <label for="status" class="col-md-4 control-label">Status</label>
 
+                            <div class="col-md-6">
+                                
+                                <select class="form-control" id="status" name="status" required autofocus>
+                                    <option value="" selected="true">Selecione</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="0">Inativo</option>
+                                </select>
+                                @if ($errors->has('status'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('status') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

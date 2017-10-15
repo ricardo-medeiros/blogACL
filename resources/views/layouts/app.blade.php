@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">    
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">    
+    
+
     <link href="https://rsi.fiocruz.br/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css">
 </head>
 <body class="skin-blue layout-top-nav">
@@ -31,7 +33,7 @@
             <div class="container">
                 <div class="navbar-header">   
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         {{ config('app.name', 'Tributar') }}
                     </a>
                 </div>
@@ -123,5 +125,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>

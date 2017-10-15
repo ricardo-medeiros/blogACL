@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use Gate;
+use App\User;
 
 class UserController extends Controller
 {
@@ -15,11 +16,18 @@ class UserController extends Controller
         $this->middleware('auth');
     }
     
-     public function index(Post $post)
+    public function index(Post $post)
     {
         $posts = $post->all();
-        return view('acesso_usuario',compact('posts'));
+        return view('acesso_post',compact('posts'));
     }
+    
+    public function viewUser(User $user)
+    {
+        $usuarios = $user->all();
+        return view('acesso_usuario',compact('usuarios'));
+    }
+    
     //verifica se o usuário logado tem permissão para editar um Post (Model)
     public function updatePost($idPost){
         $post = Post::find($idPost);
