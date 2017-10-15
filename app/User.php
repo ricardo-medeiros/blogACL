@@ -36,6 +36,7 @@ class User extends Authenticatable
     public function hasPermission(Permission $permission){
        
         return $this->hasAnyRoles($permission->roles);
+        
     }
     
     public function hasAnyRoles($roles){

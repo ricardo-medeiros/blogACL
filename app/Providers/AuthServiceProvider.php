@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-        $this->registerPolicies();
+        $this->registerPolicies($gate);
         /*
         $gate->define('update-post',function(User $user,Post $post){
                 return $user->id == $post->user_id;
@@ -42,6 +42,7 @@ class AuthServiceProvider extends ServiceProvider
             });
         }
         
+        
         $gate->before(function(User $user, $ability){
             //Super Usuário
             //Quando o perfil do usuário for admin, ele pode fazer qualquer ação no sistema, sem a necessidade
@@ -50,6 +51,7 @@ class AuthServiceProvider extends ServiceProvider
             {
                 return true;
             }
+            
         });
     }
 }

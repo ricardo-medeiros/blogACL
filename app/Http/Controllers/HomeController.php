@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Gate;
+
 class HomeController extends Controller
 {
     /**
@@ -31,10 +32,11 @@ class HomeController extends Controller
     
     public function update($idPost){
         $post = Post::find($idPost);
+        //$user = auth()->user();
         
-        //$this->authorize('update-post',$post);
-        if (Gate::denies('update-post',$post)){
+        if (Gate::denies('edit_post',$post)){
                 abort(403,'Não Autorizada');
+
         }
         return view('post-update',compact('post'));
     }
