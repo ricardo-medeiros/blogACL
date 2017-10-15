@@ -19,5 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post/{id}/update', 'HomeController@update');
+Route::get('/acesso_usuario', 'UserController@index');
+Route::get('/post/{id}/update', 'UserController@updatePost');
 Route::get('/roles-permissions', 'HomeController@rolesPermissions');

@@ -1,5 +1,13 @@
 @extends('layouts.index')
 
+@section('adminlte_css')
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/iCheck/square/blue.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/css/auth.css') }}">
+    @yield('css')
+@stop
+
+@section('body_class', 'login-page')
+
 @section('content')
 <!--<div class="container">
     <div class="row">
@@ -74,6 +82,7 @@
     <div class="login-box-body "><h4 class="text-center">AUTENTICAÇÃO</h4>
         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
+            <div class="col-xs-12">
             <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
                 
                     <input id="email" type="email" class="form-control" autocomplete="off" name="email" placeholder="CPF ou Email" value="{{ old('email') }}" required autofocus>
@@ -100,6 +109,7 @@
 
                 </div>
 
+            </div>
             </div>
             <div class="row">
                 <div class="col-xs-8">    

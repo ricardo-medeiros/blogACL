@@ -29,16 +29,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    //relaciona os perfis dos usuários
     public function roles(){
         return $this->belongsToMany(\App\Role::class);
     }
 
+    //verifica as permissões do usuarios (alterar, excluir, criar, visualizar) 
     public function hasPermission(Permission $permission){
        
         return $this->hasAnyRoles($permission->roles);
         
     }
     
+    //verifica se a permissão esta de acordo com o perfil do usuário
     public function hasAnyRoles($roles){
         
         if (is_array($roles) || is_object($roles)){

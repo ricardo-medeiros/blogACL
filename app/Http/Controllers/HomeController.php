@@ -23,13 +23,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Post $post)
+    
+    public function index()
     {
-        $posts = $post->all();
+        //$posts = $post->all();
         //$posts = $post->where('user_id',auth()->user()->id)->get();
-        return view('home',compact('posts'));
+        return view('home');
     }
     
+    /*
     public function update($idPost){
         $post = Post::find($idPost);
         //$user = auth()->user();
@@ -40,7 +42,7 @@ class HomeController extends Controller
         }
         return view('post-update',compact('post'));
     }
-    
+    */
     public function rolesPermissions(){
         $name = auth()->user()->name;
         //return 'Roles e permissoes';

@@ -11,11 +11,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://rsi.fiocruz.br/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://rsi.fiocruz.br/css/vendor/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://rsi.fiocruz.br/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="https://rsi.fiocruz.br/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
+    <link href="https://rsi.fiocruz.br/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css">-->
+<!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">    
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">    
     <link href="https://rsi.fiocruz.br/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css">
 </head>
 <body class="skin-blue layout-top-nav">
@@ -35,7 +41,7 @@
                     <ul class="nav navbar-nav">
 
                         <li class="active">
-                            <a href="">Inicio
+                            <a href="{{url("/home")}}">Inicio
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
@@ -45,7 +51,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu"> 
                                 <li>
-                                    <a href="">Listar Usuários</a>
+                                    <a href="{{url("/acesso_usuario")}}">Listar Usuários</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
